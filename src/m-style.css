@@ -1,0 +1,16 @@
+﻿.m-http-disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.m-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.m-desactive {
+    opacity: 0.5;
+}
+    .m-desactive:hover {
+        opacity: 1;
+    }

@@ -1,0 +1,15 @@
+{
+  "name": "mscript",
+  "version": "1.0.0",
+  "description": "A simple and fast javascript library",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evandro Bellintane",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0"
+  }
+}

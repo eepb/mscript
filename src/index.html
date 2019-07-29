@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <title>Test m-script library</title>
+        <!--jquery dependecy-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <!--no bootstrap dependency, only included for a friendlier front-end-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+        <script src="m-script.js"></script>
+        <link rel="stylesheet" href="m-style.css">
+
+        <script type="text/javascript">
+            $(function(){
+                m$.init();
+                 const countries = [
+                        {
+                            country:'Brazil'
+                            ,city:[
+                                {name:'São Paulo', state:'SP'},
+                                // {name:'Rio Preto', state:'SP'},
+                                // {name:'Araraquara', state:'SP'},
+                                // {name:'São Carlos', state:'SP'},
+                                // {name:"Rio de Janeiro", state:"RJ"},
+                                // {name:"Cabo Frio", state:"RJ"},
+                                {name:"Volta Redonda", state:"RJ"}
+                            ]
+                        }
+                        // , 
+                        // {
+                        //     country: 'England'
+                        // }, 
+                        // {
+                        //     country: 'France'
+                        // }
+                    ]
+
+                m$.databind(countries,'countries');
+            })
+        </script>
+    </header>
+    <body>
+        <div class="jumbotron">
+            <div m-data="countries" m-if="country=='Brazil'">
+                {{country}}
+                <div class="row font-weight-bold" m-if="city">
+                    <div class="col-1">#</div>
+                    <div class="col-1">Estado</div>
+                    <div class="col-10">Cidade</div>
+                </div>
+                <div class="ml-3" m-data-item='city'>
+                    <div class="row" m-if="state=='RJ'">
+                        <div class="col-1">{{m$index}}</div>
+                        <div class="col-1">{{state}}</div>
+                        <div class="col-10">{{name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
